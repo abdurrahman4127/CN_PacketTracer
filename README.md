@@ -7,7 +7,7 @@ this repository contains a collection of files and directories related to networ
 - [Assignments](Assignments/): Contains assignment files and materials.
 - [DynamicAddressing](DynamicAddressing/): Includes files and modifications related to dynamic addressing techniques.
 - [DynamicRouting](DynamicRouting/): Contains files and modifications related to dynamic routing protocols.
-- [NetworkAddressTranslations/StaticNat](NetworkAddressTranslations/StaticNat/): Contains files related to static network address translations and NAT (Network Address Translation).
+- [NetworkAddressTranslations](NetworkAddressTranslations/): Contains files related to static network address translations and NAT (Network Address Translation).
 - [Practice](Practice/): Includes files related to practice exercises and assignments.
 - [StaticAddressing](StaticAddressing/): Includes files and modifications related to static addressing techniques.
 - [StaticRouting](StaticRouting/): Contains files and modifications related to static routing protocols.
