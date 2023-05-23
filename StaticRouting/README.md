@@ -106,9 +106,9 @@ for both routers,
     
 - ## for this network diagram above, do this:
 
-    ### -----------------------
-    ### |**for, Router 0:**|
-    ### -----------------------
+    ### -------------------\
+    ### |**for, Router 0:**
+    ### -------------------/
 
         Router0(config)# interface se0/1/0
         Router0(config-if)# no shutdown
@@ -123,9 +123,9 @@ for both routers,
         Router0# 
 
 
-    ### -----------------------
-    ### |**for, Router 1:**|
-    ### -----------------------
+    ### -------------------\
+    ### |**for, Router 1:**
+    ### -------------------/
 
 
         Router1(config)# interface se0/1/0
@@ -165,7 +165,7 @@ for both routers,
     
 
 ## **STEP 5. STATICALLY ASSIGN IP TO EACH END DEVICES**:
-
+- 
 
 
 
