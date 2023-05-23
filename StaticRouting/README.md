@@ -8,7 +8,7 @@
 the task is to assign IP address to the hosts manually. 
 
 **requirements:** 
-- `router 0` and `router 1` share `10.0.0.0/8` ip address atboth their `se0/1/0` interface 
+- `router 0` and `router 1` share `10.0.0.0/8` ip address at both their `se0/1/0` interface 
 - at `gig0/0/0` interface of `router 0`, the network ishaving `11.0.0.1/8` ip address
 - and at `gig0/0/0` interface of `router 1`, the network is having `12.0.0.1/8` ip address
 
@@ -21,7 +21,7 @@ for both routers,
 1. go to the router's `configuration mode`
 2. select and enable the `interface` to start functioning
 3. provide `ip` and `subnet mask`
-4. exit outta router
+4. `save` and `exit` outta router
 5. statically (manually) assign ip to each end devices
 
 
@@ -29,7 +29,7 @@ for both routers,
 #  <!-- commands for packettracer cli -->
 # **Commands**:
 
-## **STEP 1. go to the configuration mode**:
+## **STEP 1. GO TO THE CONFIGURATION MODE**:
 - to go to the `configuration mode`, 
     - (i) first go to the `user EXEC(ution) mode` 
     - (ii) then to the `privileged EXEC(ution) mode` 
@@ -68,10 +68,10 @@ for both routers,
 
 
 
-## **STEP 2. select and turn the `interface` on**:
+## **STEP 2. SELECT AND TURN THE INTERFACE ON**:
 - (i) **interface** selection:
     
-    to select an interface, type your `interface_name` followed by `int` or `interface` keyword. for example, here i'mma chose my router interface `serial 0/1/0` (i.e. `se0/1/0`). once an interface is selected, it should contain **config-if** look like this:
+    to select an interface, type your `interface_name` followed by `int` or `interface` keyword. for example, here i'mma choose my router interface `serial 0/1/0` (i.e. `se0/1/0`). once an interface is selected, it should contain **config-if** and look like this:
         
         Router(config)# interface se0/1/0
         Router(config-if)#
@@ -80,10 +80,89 @@ for both routers,
 
     by default, interfaces on network devices are in a shutdown state to ensure that they don't pass any traffic until explicitly enabled, so to enable the interface, type `no shutdown`
 
+        Router(config-if)# no shutdown
+        
+    and you should see '**changed state to up**'. like this
+
+        %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/0, changed state to up
 
 
 
 
+
+## **3. provide ip address and subnet mask**:
+
+- **providing ip address and subnetmask** to the interfaces:
+
+    [for each of the interface, select the interface name first]
+
+    here, **Router0** and **Router1** share **10.0.0.0/8** ip address at both their **se0/1/0** interface. i'mma give **10.0.0.1** to the **Router0**'s and **10.0.0.2** to the **Router1**'s interface **se0/1/0**
+
+    and as for the subnet mask, it's **255.0.0.0** ('cause it's a /8 net)
+
+        Router(config-if)# ip address 10.0.0.1 255.0.0.0
+
+    then exit outta interface, choose another interface, and do the same thing for all other router's all interfaces.
+    
+- ## for this network diagram above, do this:
+
+    ### -----------------------
+    ### |**for, Router 0:**|
+    ### -----------------------
+
+        Router0(config)# interface se0/1/0
+        Router0(config-if)# no shutdown
+        Router0(config-if)# ip address 10.0.0.1 255.0.0.0
+        Router0(config-if)# exit
+
+        Router0(config)# interface gig0/0/0
+        Router0(config-if)# no shutdown
+        Router0(config-if)# ip address 11.0.0.1 255.0.0.0
+        Router0(config-if)# exit
+        Router0(config)# exit
+        Router0# 
+
+
+    ### -----------------------
+    ### |**for, Router 1:**|
+    ### -----------------------
+
+
+        Router1(config)# interface se0/1/0
+        Router1(config-if)# no shutdown
+        Router1(config-if)# ip address 10.0.0.1 255.0.0.0
+        Router1(config-if)# exit
+
+        Router1(config)# interface gig0/0/0
+        Router1(config-if)# no shutdown
+        Router1(config-if)# ip address 11.0.0.1 255.0.0.0
+        Router1(config-if)# exit
+        Router1(config)# exit
+        Router# 
+
+
+
+
+## **STEP 4. SAVE AND EXIT OUTTA ROUTER**:
+
+-  to **save** the configuration, 
+        
+        Router0# copy running-config startup-config 
+    
+    or just simply,
+
+        Router0# wr 
+    
+    do it before exiting outta routers.
+
+- to **exit**,
+
+    close your window by `Alt+F4 ` or type `exit` again
+        
+        Router0# exit
+        Router0>
+    
+    
 
 
 
