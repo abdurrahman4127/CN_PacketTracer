@@ -147,23 +147,24 @@ for both routers,
 
 -  to **save** the configuration, 
         
-        Router0# copy running-config startup-config 
+        RouterX# copy running-config startup-config 
     
     or just simply,
 
-        Router0# wr 
+        RouterX# wr 
     
-    do it before exiting outta routers.
+    do it before exiting both of the routers.
 
 - to **exit**,
 
     close your window by `Alt+F4 ` or type `exit` again
         
-        Router0# exit
-        Router0>
+        RouterX# exit
+        RouterX>
     
     
 
+## **STEP 5. STATICALLY ASSIGN IP TO EACH END DEVICES**:
 
 
 
