@@ -82,7 +82,7 @@ for both routers,
 
         Router(config-if)# no shutdown
         
-    and you should see '**changed state to up**'. like this
+    and you should see '**changed state to up**'. like this:
 
         %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/0, changed state to up
 
@@ -135,7 +135,7 @@ for both routers,
 
         Router1(config)# interface gig0/0/0
         Router1(config-if)# no shutdown
-        Router1(config-if)# ip address 11.0.0.1 255.0.0.0
+        Router1(config-if)# ip address 12.0.0.1 255.0.0.0
         Router1(config-if)# exit
         Router1(config)# exit
         Router# 
