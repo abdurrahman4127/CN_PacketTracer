@@ -1,6 +1,6 @@
 # <!-- diagram pic -->
 # **Network Diagram** 
-![NetworkDiagram](network_diagram.png)
+![NetworkDiagram](snapshots/network_diagram.png)
 
 
 # <!-- the task i'm given -->
@@ -23,6 +23,7 @@ for both routers,
 3. provide `ip` and `subnet mask`
 4. `save` and `exit` outta router
 5. statically (manually) assign ip to each end devices
+6. test connections
 
 
 
@@ -171,37 +172,51 @@ for both routers,
     
     and then provide `IPv4`, `Subnet Mask`, `Default Gateway`, and `DNS Server`'s address
 
-### here, i'mma assign address to PC0 Network_1:
+- ### here, i'mma assign address to PC0 Network_1:
+        
+    i can assign any IP in this range:
+
+    `11.0.0.2` to `11.255.255.254` 
+
+    `first` one (`11.0.0.0`) is the `network` IP
+
+    `last` one (`11.255.255.255`) is the `broadcast` IP
+
+    and `11.0.0.2` is our **gateway** IP
+
+
+    ```
+    IPv4 Address: 11.0.0.2
+    Subnet Mask: 255.0.0.0
+    Default Gateway: 11.0.0.1
+    DNS Server: 8.8.8.8
+    ```
     
-i can assign any IP in this range:
+    like this:
 
-`11.0.0.2` to `11.255.255.254` 
-
-`first` one (`11.0.0.0`) is the `network` IP
-
-`last` one (`11.255.255.255`) is the `broadcast` IP
-
-and `11.0.0.2` is our **gateway** IP
+    ![network1_pc0](snapshots/network1_pc0.png)
 
 
-```
-IPv4 Address: 11.0.0.2
-Subnet Mask: 255.0.0.0
-Default Gateway: 11.0.0.1
-DNS Server: 8.8.8.8
-```
+    *[do for the rest of the devices]*
+
+
+- ### similarly assign address to a device from Network_2:
+
+
+    ![network2_laptop1](snapshots/network2_laptop1.png)
+
+    and then it's over, Obi Wan Kenobi, you have the higher ground! 
+
+
+
+## **STEP 6. TEST CONNECTIONS**:
+- finally, to test if it's working, ping to devices in your (same) network
     
-like this:
+    `select the source device` > `desktop` > `command prompt`
 
-![network1_pc0](network1_pc0.png)
+    then `ping` your targer - could be the router (gateway) or other devices in the same net.
 
+    here, i'm pining `PC-1` from `PC-0`:
+    ![ping](snapshots/ping.png)
 
-*[do for the rest of the devices]*
-
-
-### similarly assign address to a device from Network_2:
-
-
-![network2_laptop1](network2_laptop1.png)
-
-and then it's over, Obi Wan Kenobi, you have the higher ground! 
+    it sends 4 packets, and for the 1st ping, 1st packet will be lost - for remaining 3 packets, you'll get acknowledgements iff you did everything correctly.
