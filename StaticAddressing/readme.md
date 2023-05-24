@@ -91,7 +91,7 @@ for both routers,
 
 
 
-## **3. provide ip address and subnet mask**:
+## ** STEP 3. provide ip address and subnet mask**:
 
 - **providing ip address and subnetmask** to the interfaces:
 
