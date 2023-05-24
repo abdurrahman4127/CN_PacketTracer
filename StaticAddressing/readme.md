@@ -217,6 +217,11 @@ for both routers,
     then `ping` your targer - could be the router (gateway) or other devices in the same net.
 
     here, i'm pining `PC-1` from `PC-0`:
+    
     ![ping](snapshots/ping.png)
 
     it sends 4 packets, and for the 1st ping, 1st packet will be lost - for remaining 3 packets, you'll get acknowledgements iff you did everything correctly.
+
+
+
+**[go through the .pkt file and run]**
