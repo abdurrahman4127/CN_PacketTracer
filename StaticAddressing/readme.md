@@ -91,7 +91,7 @@ for both routers,
 
 
 
-## ** STEP 3. provide ip address and subnet mask**:
+## **STEP 3. PROVIDE IP ADDRESS AND SUBNET MASK**:
 
 - **providing ip address and subnetmask** to the interfaces:
 
@@ -225,3 +225,9 @@ for both routers,
 
 
 **[go through the .pkt file and run]**
+
+
+#
+# Contribution
+
+Contributions to this project are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
