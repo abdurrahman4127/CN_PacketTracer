@@ -1,0 +1,22 @@
+DHCP (Dynamic Host Configuration Protocol) is a network protocol used
+to automatically assign IP addresses and other network configuration 
+parameters (e.g. subnet mask, default gateway, dns-server, etc.) to devices 
+on a network. Its primary purpose is to simplify the process of IP 
+address management in a network environment.
+
+
+
+say, we're given ip(s) for some networks, and we're to setup dhcp for them.
+
+
+| networks |        IP         |
+| -------- | ------------------|
+| network1 | 192.168.20.192/27 |
+| network2 | 192.168.20.128/26 |
+| network3 | 192.168.20.0/25   |
+| network4 | 192.168.20.224/27 |
+| network5 | 192.168.10.0/24   |
+| network6 | 13.100.100.0/30   |
+| network7 | 13.100.100.4/30   |
+
+

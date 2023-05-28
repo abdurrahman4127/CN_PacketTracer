@@ -3,16 +3,33 @@
 ## Network Topology
 ![NetworkTopology](snapshots/network_topology.png)
 
-## Task
-The task is to configure DHCP (Dynamic Host Configuration Protocol) for automatic IP address assignment to network devices in Packet Tracer.
+#
+## **TASKS:**
+Dynamic Host Configuration Protocol (DHCP) is used
+to  assign IP addresses and other network configuration 
+parameters (e.g. subnet mask, default gateway, dns-server, etc.) to the hosts 
+on a network dynamically. 
 
-**Requirements**:
-- The DHCP server should provide IP addresses in the range of `192.168.1.100` to `192.168.1.200`.
-- The subnet mask for the network is `255.255.255.0`.
-- The default gateway should be `192.168.1.1`.
-- DNS server addresses should be configured as `8.8.8.8` and `8.8.4.4`.
+meaning: we won't have to configure each and every device manually.
 
-## Steps
+
+say, we're given ip(s) for some networks, and we're to setup dhcp for them.
+
+
+| networks |        IP(s)      
+| -------- | ------------------
+| network1 | 192.168.20.192/27 
+| network2 | 192.168.20.128/26 
+| network3 | 192.168.20.0/25   
+| network4 | 192.168.20.224/27 
+| network5 | 192.168.10.0/24   
+| network6 | 13.100.100.0/30   
+| network7 | 13.100.100.4/30   
+
+
+
+#
+## **STEPS**
 
 1. Add and configure a DHCP server:
    - Add a DHCP server device to the network topology.
